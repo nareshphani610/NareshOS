@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function Sidebar() {
   return (
     <div className="w-64 bg-gradient-to-b from-slate-900 to-indigo-900 text-white p-6">
@@ -12,29 +14,47 @@ function Sidebar() {
 
       <div className="mt-10 space-y-3">
 
-        <div className="bg-indigo-600 p-3 rounded-xl">
+        <NavLink
+          to="/"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
           🏠 Dashboard
-        </div>
+        </NavLink>
 
-        <div className="p-3 hover:bg-slate-800 rounded-xl cursor-pointer">
+        <NavLink
+          to="/wealth"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
           💰 Wealth
-        </div>
+        </NavLink>
 
-        <div className="p-3 hover:bg-slate-800 rounded-xl cursor-pointer">
+        <NavLink
+          to="/family"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
           ❤️ Family
-        </div>
+        </NavLink>
 
-        <div className="p-3 hover:bg-slate-800 rounded-xl cursor-pointer">
+        <NavLink
+          to="/career"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
           💼 Career
-        </div>
+        </NavLink>
 
-        <div className="p-3 hover:bg-slate-800 rounded-xl cursor-pointer">
+        <NavLink
+          to="/bhagavatgitha"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
           📖 Bhagavatgitha
-        </div>
+        </NavLink>
 
-        <div className="p-3 hover:bg-slate-800 rounded-xl cursor-pointer">
+        <NavLink
+          to="/durga"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
           🤖 Durga AI
-        </div>
+        </NavLink>
 
       </div>
     </div>
