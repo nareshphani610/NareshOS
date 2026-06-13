@@ -1,4 +1,30 @@
+import { useEffect, useState } from "react";
+
 function Analytics() {
+  const [assets, setAssets] = useState(0);
+  const [debt, setDebt] = useState(0);
+  const [netWorth, setNetWorth] = useState(0);
+
+  useEffect(() => {
+
+    const totalAssets =
+      Number(localStorage.getItem("house") || 0) +
+      Number(localStorage.getItem("epf") || 0) +
+      Number(localStorage.getItem("fd") || 0) +
+      Number(localStorage.getItem("mf") || 0);
+
+    const totalDebt =
+      Number(localStorage.getItem("homeLoan") || 0) +
+      Number(localStorage.getItem("carLoan") || 0) +
+      Number(localStorage.getItem("personalLoan") || 0) +
+      Number(localStorage.getItem("creditCard") || 0);
+
+    setAssets(totalAssets);
+    setDebt(totalDebt);
+    setNetWorth(totalAssets - totalDebt);
+
+  }, []);
+
   return (
     <div>
 
@@ -10,7 +36,6 @@ function Analytics() {
         Wealth, Goals and Life Progress Analytics
       </p>
 
-      {/* Wealth Analytics */}
       <div className="grid grid-cols-3 gap-6 mt-6">
 
         <div className="bg-white rounded-3xl p-6 shadow-lg">
@@ -19,7 +44,7 @@ function Analytics() {
           </h2>
 
           <p className="text-3xl font-bold">
-            ₹71.25L
+            ₹{assets.toLocaleString("en-IN")}
           </p>
         </div>
 
@@ -29,7 +54,7 @@ function Analytics() {
           </h2>
 
           <p className="text-3xl font-bold">
-            ₹56.07L
+            ₹{debt.toLocaleString("en-IN")}
           </p>
         </div>
 
@@ -39,53 +64,8 @@ function Analytics() {
           </h2>
 
           <p className="text-3xl font-bold">
-            ₹15.18L
+            ₹{netWorth.toLocaleString("en-IN")}
           </p>
-        </div>
-
-      </div>
-
-      {/* Goal Progress */}
-      <div className="bg-white rounded-3xl p-6 shadow-lg mt-6">
-
-        <h2 className="text-2xl font-bold mb-6">
-          🎯 Goal Progress
-        </h2>
-
-        <div className="space-y-6">
-
-          <div>
-            <p>Debt Free Journey</p>
-
-            <div className="bg-gray-200 h-4 rounded-full mt-2">
-              <div className="bg-green-500 h-4 rounded-full w-[7%]"></div>
-            </div>
-          </div>
-
-          <div>
-            <p>₹1 Crore Wealth Goal</p>
-
-            <div className="bg-gray-200 h-4 rounded-full mt-2">
-              <div className="bg-purple-500 h-4 rounded-full w-[71%]"></div>
-            </div>
-          </div>
-
-          <div>
-            <p>AZ-104 Certification</p>
-
-            <div className="bg-gray-200 h-4 rounded-full mt-2">
-              <div className="bg-blue-500 h-4 rounded-full w-[40%]"></div>
-            </div>
-          </div>
-
-          <div>
-            <p>Bhagavatgitha MVP</p>
-
-            <div className="bg-gray-200 h-4 rounded-full mt-2">
-              <div className="bg-orange-500 h-4 rounded-full w-[10%]"></div>
-            </div>
-          </div>
-
         </div>
 
       </div>
