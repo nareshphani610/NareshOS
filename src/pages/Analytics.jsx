@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import GoalEngine from "../components/GoalEngine";
+import BackupRestore from "../components/BackupRestore";
 
 function Analytics() {
   const [assets, setAssets] = useState(0);
@@ -72,7 +73,9 @@ function Analytics() {
   <GoalEngine />
 </div>
       </div>
-
+<div className="mt-6">
+  <BackupRestore />
+</div>
     </div>
   );
 }
