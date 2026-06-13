@@ -55,6 +55,12 @@ function Sidebar() {
         >
           🤖 Durga AI
         </NavLink>
+        <NavLink
+  to="/analytics"
+  className="block p-3 rounded-xl hover:bg-indigo-600"
+>
+  📊 Analytics
+</NavLink>
 
       </div>
     </div>

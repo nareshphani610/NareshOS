@@ -8,6 +8,7 @@ import Family from "./pages/Family";
 import Career from "./pages/Career";
 import Bhagavatgitha from "./pages/Bhagavatgitha";
 import DurgaAIPage from "./pages/DurgaAIPage";
+import Analytics from "./pages/Analytics";
 
 function App() {
   return (
@@ -50,6 +51,10 @@ function App() {
               path="/durga"
               element={<DurgaAIPage />}
             />
+            <Route
+  path="/analytics"
+  element={<Analytics />}
+/>
 
           </Routes>
 
