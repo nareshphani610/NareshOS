@@ -1,3 +1,4 @@
+import AZ104Tracker from "../components/AZ104Tracker";
 function Career() {
   return (
     <div>
@@ -69,7 +70,9 @@ function Career() {
         </ul>
 
       </div>
-
+<div className="mt-6">
+  <AZ104Tracker />
+</div>
     </div>
   );
 }

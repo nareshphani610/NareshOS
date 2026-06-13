@@ -1,5 +1,6 @@
 import FamilyCard from "../components/FamilyCard";
 import CelebrationCard from "../components/CelebrationCard";
+import FamilyCountdownCard from "../components/FamilyCountdownCard";
 
 function Family() {
   return (
@@ -13,7 +14,6 @@ function Family() {
         Family, Celebrations and Important Dates
       </p>
 
-      {/* Family Summary */}
       <div className="grid grid-cols-3 gap-6 mt-6">
 
         <div className="bg-white rounded-3xl p-6 shadow-lg">
@@ -21,9 +21,7 @@ function Family() {
             🎂 Upcoming Event
           </h2>
 
-          <p>
-            Durga Birthday
-          </p>
+          <p>Durga Birthday</p>
 
           <p className="text-pink-600 font-bold mt-2">
             03 Jul
@@ -35,9 +33,7 @@ function Family() {
             💍 Anniversary
           </h2>
 
-          <p>
-            23 May
-          </p>
+          <p>23 May</p>
         </div>
 
         <div className="bg-white rounded-3xl p-6 shadow-lg">
@@ -45,9 +41,7 @@ function Family() {
             🎉 Celebration Goal
           </h2>
 
-          <p>
-            ₹35,000 / ₹1,00,000
-          </p>
+          <p>₹35,000 / ₹1,00,000</p>
 
           <div className="bg-gray-200 h-3 rounded-full mt-3">
             <div className="bg-green-500 h-3 rounded-full w-1/3"></div>
@@ -56,12 +50,13 @@ function Family() {
 
       </div>
 
-      {/* Family Details */}
-      <div className="grid grid-cols-2 gap-6 mt-6">
+      <div className="grid grid-cols-3 gap-6 mt-6">
 
         <FamilyCard />
 
         <CelebrationCard />
+
+        <FamilyCountdownCard />
 
       </div>
 

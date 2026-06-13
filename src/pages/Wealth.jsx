@@ -5,6 +5,7 @@ import GoalsCard from "../components/GoalsCard";
 import NetWorthCard from "../components/NetWorthCard";
 import DebtFreeCard from "../components/DebtFreeCard";
 import WealthGoalCard from "../components/WealthGoalCard";
+import WealthHistory from "../components/WealthHistory";
 
 function Wealth() {
   return (
@@ -37,7 +38,9 @@ function Wealth() {
         <LiabilitiesCard />
 
         <GoalsCard />
-
+<div className="mt-6">
+  <WealthHistory />
+</div>
       </div>
 
     </div>
