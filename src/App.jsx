@@ -12,6 +12,8 @@ import CelebrationCard from "./components/CelebrationCard";
 import DurgaAI from "./components/DurgaAI";
 
 import NetWorthCard from "./components/NetWorthCard";
+import DebtFreeCard from "./components/DebtFreeCard";
+import WealthGoalCard from "./components/WealthGoalCard";
 
 function App() {
   return (
@@ -59,9 +61,11 @@ function App() {
 
         </div>
 
-        {/* Auto Net Worth */}
-        <div className="mt-6">
+        {/* Financial Goals */}
+        <div className="grid grid-cols-3 gap-6 mt-6">
           <NetWorthCard />
+          <DebtFreeCard />
+          <WealthGoalCard />
         </div>
 
         <KPICards />
