@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import GoalEngine from "../components/GoalEngine";
 
 function Analytics() {
   const [assets, setAssets] = useState(0);
@@ -67,7 +68,9 @@ function Analytics() {
             ₹{netWorth.toLocaleString("en-IN")}
           </p>
         </div>
-
+<div className="mt-6">
+  <GoalEngine />
+</div>
       </div>
 
     </div>

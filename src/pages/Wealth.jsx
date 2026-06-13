@@ -5,7 +5,9 @@ import GoalsCard from "../components/GoalsCard";
 import NetWorthCard from "../components/NetWorthCard";
 import DebtFreeCard from "../components/DebtFreeCard";
 import WealthGoalCard from "../components/WealthGoalCard";
+
 import WealthHistory from "../components/WealthHistory";
+import WealthTrendCard from "../components/WealthTrendCard";
 
 function Wealth() {
   return (
@@ -19,7 +21,7 @@ function Wealth() {
         Manage Assets, Liabilities and Financial Goals
       </p>
 
-      {/* Financial Summary */}
+      {/* Summary Cards */}
       <div className="grid grid-cols-3 gap-6 mt-6">
 
         <NetWorthCard />
@@ -38,9 +40,17 @@ function Wealth() {
         <LiabilitiesCard />
 
         <GoalsCard />
-<div className="mt-6">
-  <WealthHistory />
-</div>
+
+      </div>
+
+      {/* Wealth History */}
+      <div className="mt-6">
+        <WealthHistory />
+      </div>
+
+      {/* Wealth Trend */}
+      <div className="mt-6">
+        <WealthTrendCard />
       </div>
 
     </div>
