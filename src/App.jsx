@@ -1,13 +1,17 @@
 import Sidebar from "./components/Sidebar";
+import DateTimeCard from "./components/DateTimeCard";
 import KPICards from "./components/KPICards";
 import DurgaPanel from "./components/DurgaPanel";
+
 import AssetsCard from "./components/AssetsCard";
 import LiabilitiesCard from "./components/LiabilitiesCard";
 import GoalsCard from "./components/GoalsCard";
+
 import FamilyCard from "./components/FamilyCard";
 import CelebrationCard from "./components/CelebrationCard";
 import DurgaAI from "./components/DurgaAI";
-import DateTimeCard from "./components/DateTimeCard";
+
+import NetWorthCard from "./components/NetWorthCard";
 
 function App() {
   return (
@@ -53,6 +57,11 @@ function App() {
             </div>
           </div>
 
+        </div>
+
+        {/* Auto Net Worth */}
+        <div className="mt-6">
+          <NetWorthCard />
         </div>
 
         <KPICards />
