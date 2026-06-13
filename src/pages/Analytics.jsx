@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
+
 import GoalEngine from "../components/GoalEngine";
 import BackupRestore from "../components/BackupRestore";
 
+// import WealthAnalyticsChart from "../components/WealthAnalyticsChart";
+// import GoalAnalyticsChart from "../components/GoalAnalyticsChart";
+
 function Analytics() {
+
   const [assets, setAssets] = useState(0);
   const [debt, setDebt] = useState(0);
   const [netWorth, setNetWorth] = useState(0);
@@ -35,14 +40,15 @@ function Analytics() {
       </h1>
 
       <p className="text-gray-500 mt-2">
-        Wealth, Goals and Life Progress Analytics
+        Advanced Analytics Dashboard
       </p>
 
+      {/* Summary Cards */}
       <div className="grid grid-cols-3 gap-6 mt-6">
 
         <div className="bg-white rounded-3xl p-6 shadow-lg">
           <h2 className="text-xl font-bold mb-4">
-            💰 Total Assets
+            💰 Assets
           </h2>
 
           <p className="text-3xl font-bold">
@@ -52,7 +58,7 @@ function Analytics() {
 
         <div className="bg-white rounded-3xl p-6 shadow-lg">
           <h2 className="text-xl font-bold mb-4">
-            📉 Total Debt
+            📉 Debt
           </h2>
 
           <p className="text-3xl font-bold">
@@ -69,13 +75,21 @@ function Analytics() {
             ₹{netWorth.toLocaleString("en-IN")}
           </p>
         </div>
-<div className="mt-6">
-  <GoalEngine />
-</div>
+
       </div>
-<div className="mt-6">
-  <BackupRestore />
-</div>
+
+      {/* Charts Temporarily Disabled */}
+
+      {/* Goal Engine */}
+      <div className="mt-6">
+        <GoalEngine />
+      </div>
+
+      {/* Backup & Restore */}
+      <div className="mt-6">
+        <BackupRestore />
+      </div>
+
     </div>
   );
 }
