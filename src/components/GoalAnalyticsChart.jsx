@@ -4,7 +4,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from "recharts";
 
 function GoalAnalyticsChart() {
@@ -15,24 +15,24 @@ function GoalAnalyticsChart() {
   const data = [
     {
       goal: "Debt Free",
-      progress: 7
+      progress: 7,
     },
     {
       goal: "₹1 Crore",
-      progress: 71
+      progress: 71,
     },
     {
       goal: "AZ-104",
-      progress: az104
+      progress: az104,
     },
     {
       goal: "Bhagavatgitha",
-      progress: 10
+      progress: 10,
     },
     {
       goal: "Fund",
-      progress: 35
-    }
+      progress: 35,
+    },
   ];
 
   return (

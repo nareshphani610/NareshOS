@@ -5,15 +5,30 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from "recharts";
 
 function WealthAnalyticsChart() {
 
-  const data =
-    JSON.parse(
-      localStorage.getItem("wealthHistory")
-    ) || [];
+  let data = [];
+
+  try {
+    data =
+      JSON.parse(
+        localStorage.getItem("wealthHistory")
+      ) || [];
+  } catch {
+    data = [];
+  }
+
+  if (data.length === 0) {
+    data = [
+      {
+        month: "Current",
+        netWorth: 0,
+      },
+    ];
+  }
 
   return (
     <div className="bg-white rounded-3xl p-6 shadow-lg">
@@ -22,29 +37,32 @@ function WealthAnalyticsChart() {
         📈 Net Worth Trend
       </h2>
 
-      <ResponsiveContainer
-        width="100%"
-        height={300}
-      >
-        <LineChart data={data}>
+      <div style={{ width: "100%", height: 300 }}>
 
-          <CartesianGrid strokeDasharray="3 3" />
+        <ResponsiveContainer>
 
-          <XAxis dataKey="month" />
+          <LineChart data={data}>
 
-          <YAxis />
+            <CartesianGrid strokeDasharray="3 3" />
 
-          <Tooltip />
+            <XAxis dataKey="month" />
 
-          <Line
-            type="monotone"
-            dataKey="netWorth"
-            stroke="#4f46e5"
-            strokeWidth={3}
-          />
+            <YAxis />
 
-        </LineChart>
-      </ResponsiveContainer>
+            <Tooltip />
+
+            <Line
+              type="monotone"
+              dataKey="netWorth"
+              stroke="#4f46e5"
+              strokeWidth={3}
+            />
+
+          </LineChart>
+
+        </ResponsiveContainer>
+
+      </div>
 
     </div>
   );
