@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { signOut } from "../services/authService";
 
 function Sidebar() {
   return (
@@ -55,6 +56,15 @@ function Sidebar() {
         >
           🤖 Durga AI
         </NavLink>
+        <button
+  onClick={async () => {
+    await signOut();
+    window.location.reload();
+  }}
+  className="mt-10 bg-red-600 px-4 py-2 rounded-xl"
+>
+  Logout
+</button>
         <NavLink
   to="/analytics"
   className="block p-3 rounded-xl hover:bg-indigo-600"
