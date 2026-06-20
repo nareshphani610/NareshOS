@@ -29,6 +29,18 @@ import DynamicKnowledgeVault from "../components/DynamicKnowledgeVault";
 import DurgaMemorySearch from "../components/DurgaMemorySearch";
 import CashFlowCommandCenter from "../components/CashFlowCommandCenter";
 
+import InvestmentCommandCenter from "../components/InvestmentCommandCenter";
+import NetWorthTrendChart from "../components/NetWorthTrendChart";
+import DebtFreeCountdown from "../components/DebtFreeCountdown";
+
+import DurgaFinancialAdvisor from "../components/DurgaFinancialAdvisor";
+import AssetAllocationChart from "../components/AssetAllocationChart";
+
+import WealthForecastEngine from "../components/WealthForecastEngine";
+import SIPStepUpCalculator from "../components/SIPStepUpCalculator";
+import WealthScoreEngine from "../components/WealthScoreEngine";
+import DebtOptimizationEngine from "../components/DebtOptimizationEngine";
+import CashFlowCard from "../components/CashFlowCard";
 function Dashboard() {
   return (
     <div className="p-2 md:p-0">
@@ -99,11 +111,39 @@ function Dashboard() {
       <div className="mt-6">
         <DurgaMemorySearch />
       </div>
-
+<div className="mt-6">
+  <CashFlowCard />
+</div>
       <div className="mt-6">
         <CashFlowCommandCenter />
       </div>
-
+<div className="mt-6">
+  <InvestmentCommandCenter />
+</div>
+<div className="mt-6">
+  <AssetAllocationChart />
+</div>
+<div className="mt-6">
+  <NetWorthTrendChart />
+</div>
+<div className="mt-6">
+  <DebtFreeCountdown />
+</div>
+<div className="mt-6">
+  <DurgaFinancialAdvisor />
+</div>
+<div className="mt-6">
+  <WealthForecastEngine />
+</div>
+<div className="mt-6">
+  <SIPStepUpCalculator />
+</div>
+<div className="mt-6">
+  <WealthScoreEngine />
+</div>
+<div className="mt-6">
+  <DebtOptimizationEngine />
+</div>
     </div>
   );
 }

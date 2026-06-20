@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { signOut } from "../services/authService";
+import ThemeToggle from "./ThemeToggle";
 
 function Sidebar() {
   return (
@@ -13,6 +14,15 @@ function Sidebar() {
         Live Your Dharma
       </p>
 
+      <div className="mt-4">
+        <ThemeToggle />
+      </div>
+<NavLink
+  to="/copilot"
+  className="block p-3 rounded-xl hover:bg-indigo-600"
+>
+  🖥️ Endpoint Copilot
+</NavLink>
       <div className="mt-10 space-y-3">
 
         <NavLink
@@ -21,7 +31,12 @@ function Sidebar() {
         >
           🏠 Dashboard
         </NavLink>
-
+<NavLink
+  to="/settings"
+  className="block p-3 rounded-xl hover:bg-indigo-600"
+>
+  ⚙️ Settings
+</NavLink>
         <NavLink
           to="/wealth"
           className="block p-3 rounded-xl hover:bg-indigo-600"
@@ -41,13 +56,6 @@ function Sidebar() {
           className="block p-3 rounded-xl hover:bg-indigo-600"
         >
           💼 Career
-        </NavLink>
-
-        <NavLink
-          to="/bhagavatgitha"
-          className="block p-3 rounded-xl hover:bg-indigo-600"
-        >
-          📖 Bhagavatgitha
         </NavLink>
 
         <NavLink

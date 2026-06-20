@@ -15,6 +15,8 @@ import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 
 import ProtectedRoute from "./components/ProtectedRoute";
+import EndpointCopilot from "./pages/EndpointCopilot";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -72,7 +74,10 @@ function App() {
                       path="/bhagavatgitha"
                       element={<Bhagavatgitha />}
                     />
-
+<Route
+  path="/settings"
+  element={<Settings />}
+/>
                     <Route
                       path="/durga"
                       element={<DurgaAIPage />}
@@ -87,7 +92,10 @@ function App() {
                       path="/profile"
                       element={<Profile />}
                     />
-
+<Route
+  path="/copilot"
+  element={<EndpointCopilot />}
+/>
                   </Routes>
 
                 </div>
