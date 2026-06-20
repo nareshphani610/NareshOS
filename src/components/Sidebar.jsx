@@ -3,7 +3,7 @@ import { signOut } from "../services/authService";
 
 function Sidebar() {
   return (
-    <div className="w-64 bg-gradient-to-b from-slate-900 to-indigo-900 text-white p-6">
+    <div className="hidden md:block w-64 bg-gradient-to-b from-slate-900 to-indigo-900 text-white p-6">
 
       <h1 className="text-3xl font-bold">
         🪷 NareshOS
@@ -56,23 +56,33 @@ function Sidebar() {
         >
           🤖 Durga AI
         </NavLink>
-        <button
-  onClick={async () => {
-    await signOut();
-    window.location.reload();
-  }}
-  className="mt-10 bg-red-600 px-4 py-2 rounded-xl"
->
-  Logout
-</button>
+
         <NavLink
-  to="/analytics"
-  className="block p-3 rounded-xl hover:bg-indigo-600"
->
-  📊 Analytics
-</NavLink>
+          to="/analytics"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
+          📊 Analytics
+        </NavLink>
+
+        <NavLink
+          to="/profile"
+          className="block p-3 rounded-xl hover:bg-indigo-600"
+        >
+          👤 Profile
+        </NavLink>
+
+        <button
+          onClick={async () => {
+            await signOut();
+            window.location.href = "/login";
+          }}
+          className="mt-10 bg-red-600 px-4 py-2 rounded-xl w-full"
+        >
+          Logout
+        </button>
 
       </div>
+
     </div>
   );
 }

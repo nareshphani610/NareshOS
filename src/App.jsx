@@ -19,7 +19,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
         {/* Public Routes */}
@@ -39,14 +38,13 @@ function App() {
         <Route
           path="*"
           element={
-
             <ProtectedRoute>
 
-              <div className="flex min-h-screen bg-slate-100">
+              <div className="flex flex-col md:flex-row min-h-screen bg-slate-100">
 
                 <Sidebar />
 
-                <div className="flex-1 p-8">
+                <div className="flex-1 p-3 md:p-8">
 
                   <Routes>
 
@@ -97,12 +95,10 @@ function App() {
               </div>
 
             </ProtectedRoute>
-
           }
         />
 
       </Routes>
-
     </BrowserRouter>
   );
 }

@@ -31,16 +31,16 @@ import CashFlowCommandCenter from "../components/CashFlowCommandCenter";
 
 function Dashboard() {
   return (
-    <div>
+    <div className="p-2 md:p-0">
 
       <DurgaDailyDashboard />
 
-      <div className="grid grid-cols-2 gap-6 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <ExecutiveSummaryCard />
         <LifeScoreCard />
       </div>
 
-      <div className="grid grid-cols-3 gap-6 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         <NetWorthCard />
         <DebtFreeCard />
         <WealthGoalCard />
@@ -58,7 +58,7 @@ function Dashboard() {
         <RealDurgaAI />
       </div>
 
-      <div className="grid grid-cols-3 gap-6 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         <DateTimeCard />
         <NextFamilyEventCard />
         <CelebrationCard />
