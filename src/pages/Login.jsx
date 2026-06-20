@@ -1,9 +1,5 @@
 import { useState } from "react";
-
-import {
-  signIn,
-  signUp,
-} from "../services/authService";
+import { signIn } from "../services/authService";
 
 function Login() {
 
@@ -13,83 +9,80 @@ function Login() {
   const [password, setPassword] =
     useState("");
 
-  const handleLogin =
-    async () => {
+  async function handleLogin() {
 
-      const { error } =
-        await signIn(
-          email,
-          password
-        );
+    const {
+      data,
+      error,
+    } = await signIn(
+      email,
+      password
+    );
 
-      if (error) {
-        alert(error.message);
-        return;
-      }
+    console.log(
+      "LOGIN DATA:",
+      data
+    );
 
-      window.location.reload();
-    };
+    console.log(
+      "LOGIN ERROR:",
+      error
+    );
 
-  const handleSignup =
-    async () => {
-
-      const { error } =
-        await signUp(
-          email,
-          password
-        );
-
-      if (error) {
-        alert(error.message);
-        return;
-      }
+    if (error) {
 
       alert(
-        "Check your email for verification"
+        error.message
       );
-    };
+
+      return;
+    }
+
+    alert(
+      "Login Successful"
+    );
+
+    window.location.href = "/";
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100">
 
-      <div className="bg-white p-8 rounded-3xl shadow-lg w-96">
+      <div className="bg-white p-10 rounded-3xl shadow-lg w-[420px]">
 
-        <h1 className="text-3xl font-bold mb-6">
+        <h1 className="text-4xl font-bold mb-8 text-center">
           🔐 NareshOS Login
         </h1>
 
         <input
           type="email"
           placeholder="Email"
-          className="w-full border p-3 rounded-lg mb-3"
+          className="w-full border p-3 rounded-xl mb-4"
           value={email}
           onChange={(e) =>
-            setEmail(e.target.value)
+            setEmail(
+              e.target.value
+            )
           }
         />
 
         <input
           type="password"
           placeholder="Password"
-          className="w-full border p-3 rounded-lg mb-4"
+          className="w-full border p-3 rounded-xl mb-6"
           value={password}
           onChange={(e) =>
-            setPassword(e.target.value)
+            setPassword(
+              e.target.value
+            )
           }
         />
 
         <button
           onClick={handleLogin}
-          className="w-full bg-indigo-600 text-white p-3 rounded-lg mb-3"
+          className="w-full bg-indigo-600 text-white py-3 rounded-xl hover:bg-indigo-700"
         >
           Login
-        </button>
-
-        <button
-          onClick={handleSignup}
-          className="w-full bg-green-600 text-white p-3 rounded-lg"
-        >
-          Sign Up
         </button>
 
       </div>
